@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import model.CaeserTextShift;
 import model.CypherText;
-import model.Letters;
 import view.CaeserFrame;
 
 public class Shift implements ActionListener {

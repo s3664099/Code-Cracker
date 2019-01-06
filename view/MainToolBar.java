@@ -1,20 +1,41 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JToolBar;
 
 import controller.Caeser;
+import controller.Transpose;
 
+@SuppressWarnings("serial")
 public class MainToolBar extends JToolBar {
 	
 	private JButton button;
+	private MainFrame frame;
 	
 	public MainToolBar(MainFrame frame)
 	{
+		
+		this.frame = frame;
+		
 		//This button creates a new screen to manipulate
-		//the text using the Caeser Cypher. The frame is passed through.
-		button = new JButton("Caeser Cypher");
-		button.addActionListener(new Caeser(frame));
+		//the text using the Caeser Cypher. The frame is passed through.		
+		AddButton("Caeser Cypher", new Caeser(frame));
+		
+		//Adds a button to fire up the Double Transposition frame
+		AddButton("Double Transposition", new Transpose(frame));
+		
+		button = new JButton("Frequency Analysis");
+		enableButton(frame, button);
+	}
+	
+	//This method adds a new button to the tool bar
+	//The listener and title are passed through
+	public void AddButton(String title, ActionListener type)
+	{
+		button = new JButton(title);
+		button.addActionListener(type);
 		enableButton(frame, button);
 	}
 	
