@@ -34,7 +34,7 @@ public class DoubleTransposeFrame extends JFrame {
 	}
 	
 	//Sets up a panel that will display the matrix
-	public void addMatrixPanel(MatrixCode matrix)
+	private void addMatrixPanel(MatrixCode matrix)
 	{
 		matrixPanel = new MatrixPanel(matrix);
 		add(matrixPanel, BorderLayout.CENTER);

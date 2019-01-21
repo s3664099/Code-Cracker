@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JToolBar;
 
 import controller.Caeser;
+import controller.Frequency;
 import controller.Transpose;
 
 @SuppressWarnings("serial")
@@ -26,8 +27,9 @@ public class MainToolBar extends JToolBar {
 		//Adds a button to fire up the Double Transposition frame
 		AddButton("Double Transposition", new Transpose(frame));
 		
-		button = new JButton("Frequency Analysis");
-		enableButton(frame, button);
+		//Adds a button to fire up the Frequency Analysis frame
+		AddButton("Frequency Analysis", new Frequency(frame));
+		
 	}
 	
 	//This method adds a new button to the tool bar
